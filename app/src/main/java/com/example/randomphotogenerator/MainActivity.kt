@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.google.gson.Gson
 import retrofit2.Call
@@ -18,6 +19,7 @@ import retrofit2.http.Query
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var text :TextView
     private lateinit var imageView: ImageView
     private lateinit var button: Button
     private var currentPhotoUrl: String = ""
@@ -27,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
+        text= findViewById(R.id.text)
         imageView = findViewById(R.id.imageView)
         button = findViewById(R.id.button)
 
@@ -57,10 +60,13 @@ class MainActivity : AppCompatActivity() {
                     if (response.isSuccessful) {
                         val photoData = response.body()
                         val fullPhotoUrl = photoData?.urls?.full
+                        val description = photoData?.description
+
+                        text.setText(description)
+
 
 
                         if (!fullPhotoUrl.isNullOrEmpty()) {
-                            Log.d("MainActivity", "New photo URL: $fullPhotoUrl")
                             Glide.with(this@MainActivity).load(fullPhotoUrl).into(imageView)
                         }
                     }
