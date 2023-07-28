@@ -10,8 +10,8 @@
         android:layout_height="50dp"
         android:padding="16dp">
 
-        <ImageButton
-            android:id="@+id/left"
+        <ImageView
+            android:id="@+id/leftIconImageView"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_alignParentStart="true"
@@ -19,8 +19,8 @@
             android:background="@color/button_text_color"
             android:src="@drawable/back" />
 
-        <ImageButton
-            android:id="@+id/search"
+        <ImageView
+            android:id="@+id/searchImageIcon"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_alignParentEnd="true"

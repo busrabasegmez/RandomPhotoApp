@@ -7,15 +7,12 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import com.bumptech.glide.Glide
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.GET
-import retrofit2.http.Query
 
 
 class MainActivity : AppCompatActivity() {
@@ -23,7 +20,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var text: TextView
     private lateinit var imageView: ImageView
     private lateinit var button: Button
-    private lateinit var imageButton: ImageButton
+    private lateinit var imageButton: ImageView
     private var currentPhotoUrl: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,11 +28,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        text = findViewById(R.id.text)
-        imageView = findViewById(R.id.imageView)
-        button = findViewById(R.id.button)
-        imageButton=findViewById(R.id.search)
-        var leftButton = findViewById<ImageButton>(R.id.left)
+        text = findViewById(R.id.photoDescriptionText)
+        imageView = findViewById(R.id.RandomImageView)
+        button = findViewById(R.id.ChangePhotoButton)
+        imageButton=findViewById(R.id.searchImageIcon)
+        var leftButton: ImageView
 
         Glide.with(this).load(currentPhotoUrl).into(imageView)
 
@@ -45,7 +42,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        leftButton=findViewById<ImageButton>(R.id.left)
+        leftButton=findViewById<ImageButton>(R.id.leftIconImageView)
         leftButton.setOnClickListener{
             onDestroy()
         }

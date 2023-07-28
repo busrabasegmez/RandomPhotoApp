@@ -11,7 +11,7 @@
         android:padding="16dp">
 
         <ImageButton
-            android:id="@+id/left"
+            android:id="@+id/leftIconImageView"
             android:layout_marginStart="10dp"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
@@ -22,7 +22,7 @@
 
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/searchTitleTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
