@@ -2,6 +2,7 @@ package com.example.randomphotogenerator
 
 import com.google.gson.annotations.SerializedName
 
+
 data class PhotoData(
     val id: String,
     val slug: String,
